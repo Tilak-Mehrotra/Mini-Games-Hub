@@ -1,0 +1,779 @@
+/* =========================================
+   MINI GAMES HUB
+   Main Website Stylesheet
+========================================= */
+
+
+/* =========================================
+   1. GLOBAL VARIABLES
+========================================= */
+
+:root {
+    --bg-primary: #090b16;
+    --bg-secondary: #101426;
+    --bg-card: #151a30;
+
+    --accent-purple: #8b5cf6;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #22d3ee;
+
+    --text-primary: #ffffff;
+    --text-secondary: #a1a8bd;
+
+    --border-color: rgba(255, 255, 255, 0.09);
+
+    --gradient-primary: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #3b82f6
+    );
+
+    --transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   2. RESET AND GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(9, 11, 22, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    font-size: 27px;
+}
+
+.logo-highlight {
+    color: var(--accent-purple);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-purple);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: white;
+}
+
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+
+.hero-section {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(91, 63, 180, 0.15),
+            transparent 35%
+        ),
+        var(--bg-primary);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-tag,
+.section-tag {
+    display: inline-block;
+
+    color: var(--accent-cyan);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    color: var(--text-secondary);
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin: 25px 0 35px;
+    max-width: 520px;
+}
+
+
+/* =========================================
+   5. BUTTONS
+========================================= */
+
+.btn {
+    border: none;
+    border-radius: 8px;
+
+    padding: 14px 24px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(107, 75, 220, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(107, 75, 220, 0.4);
+}
+
+.btn-secondary {
+    background: var(--bg-card);
+    color: white;
+
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-purple);
+}
+
+
+/* =========================================
+   6. HERO GAMING ILLUSTRATION
+========================================= */
+
+.hero-visual {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 350px;
+}
+
+.game-illustration {
+    width: 340px;
+    height: 300px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-glow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(139, 92, 246, 0.16);
+    filter: blur(50px);
+}
+
+.controller {
+    position: relative;
+    z-index: 2;
+
+    width: 270px;
+    height: 155px;
+
+    background: linear-gradient(
+        145deg,
+        #272d4c,
+        #11172d
+    );
+
+    border-radius: 75px 75px 60px 60px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(139, 92, 246, 0.2);
+
+    transform: rotate(-8deg);
+}
+
+.controller-dpad {
+    position: absolute;
+    top: 55px;
+    left: 45px;
+
+    width: 48px;
+    height: 48px;
+}
+
+.controller-dpad::before,
+.controller-dpad::after {
+    content: "";
+
+    position: absolute;
+    background: #8d96b3;
+    border-radius: 4px;
+}
+
+.controller-dpad::before {
+    width: 48px;
+    height: 16px;
+
+    top: 16px;
+}
+
+.controller-dpad::after {
+    width: 16px;
+    height: 48px;
+
+    left: 16px;
+}
+
+.controller-buttons {
+    position: absolute;
+    right: 38px;
+    top: 45px;
+}
+
+.controller-buttons span {
+    position: absolute;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.button-a {
+    background: #8b5cf6;
+    top: 0;
+    right: 25px;
+}
+
+.button-b {
+    background: #3b82f6;
+    top: 30px;
+    right: -5px;
+}
+
+.controller-center {
+    position: absolute;
+
+    bottom: 20px;
+    left: 105px;
+
+    display: flex;
+    gap: 12px;
+}
+
+.controller-center span {
+    width: 22px;
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: #59617d;
+}
+
+.floating-icon {
+    position: absolute;
+    z-index: 3;
+
+    font-size: 35px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-one {
+    top: 10px;
+    left: 25px;
+
+    color: var(--accent-cyan);
+}
+
+.icon-two {
+    right: 15px;
+    top: 50px;
+
+    color: var(--accent-purple);
+    animation-delay: 0.5s;
+}
+
+.icon-three {
+    right: 15px;
+    bottom: 15px;
+
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================================
+   7. GAMES SECTION
+========================================= */
+
+.games-section {
+    background: var(--bg-secondary);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+    color: var(--accent-purple);
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+    margin-top: 12px;
+}
+
+.games-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   8. GAME CARDS
+========================================= */
+
+.game-card {
+    position: relative;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+
+    padding: 30px;
+
+    transition: var(--transition);
+
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(139, 92, 246, 0.7);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.game-card-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+.tic-icon {
+    background: rgba(139, 92, 246, 0.18);
+}
+
+.rps-icon {
+    background: rgba(59, 130, 246, 0.18);
+}
+
+.memory-icon {
+    background: rgba(34, 211, 238, 0.15);
+}
+
+.snake-icon {
+    background: rgba(34, 197, 94, 0.15);
+}
+
+.pong-icon {
+    background: rgba(245, 158, 11, 0.15);
+}
+
+.game-category {
+    display: inline-block;
+
+    color: var(--accent-cyan);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.game-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.game-card p {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    min-height: 75px;
+
+    margin-bottom: 25px;
+}
+
+.btn-game {
+    width: 100%;
+
+    background: rgba(139, 92, 246, 0.12);
+
+    border: 1px solid rgba(139, 92, 246, 0.25);
+
+    color: #c4b5fd;
+}
+
+.btn-game:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+
+/* =========================================
+   9. ABOUT SECTION
+========================================= */
+
+.about-section {
+    background: var(--bg-primary);
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+    align-items: center;
+}
+
+.about-content h2 {
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    padding: 25px;
+
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-5px);
+}
+
+.feature-card span {
+    font-size: 30px;
+}
+
+.feature-card h3 {
+    font-size: 17px;
+    margin: 12px 0 5px;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+.footer {
+    background: #070914;
+
+    border-top: 1px solid var(--border-color);
+
+    padding-top: 65px;
+}
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 45px;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    max-width: 300px;
+}
+
+.footer-links,
+.footer-tech {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3,
+.footer-tech h3 {
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-tech p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-purple);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+
+    padding: 20px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    color: #777f96;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   11. ACCESSIBILITY AND INTERACTION
+========================================= */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--accent-purple);
+    color: white;
+}

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Mini Games Hub - Explore, play, and enjoy a collection of interactive browser-based games.">
+
+    <meta name="author" content="Tilak Mehrotra">
+
+    <title>Mini Games Hub | Your Playground</title>
+
+    <!-- Website Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVIGATION BAR
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <!-- Website Logo -->
+            <a href="#" class="logo" id="home-logo">
+                <span class="logo-icon">🎮</span>
+                <span>MINI GAMES <span class="logo-highlight">HUB</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+
+                <a href="#home" class="nav-link active" data-section="home">
+                    Home
+                </a>
+
+                <a href="#games" class="nav-link" data-section="games">
+                    Games
+                </a>
+
+                <a href="#about" class="nav-link" data-section="about">
+                    About
+                </a>
+
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" id="menu-toggle"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         MAIN WEBSITE CONTENT
+    ====================================== -->
+
+    <main id="main-content">
+
+
+        <!-- =================================
+             HOME / HERO SECTION
+        ================================== -->
+
+        <section class="hero-section" id="home">
+
+            <div class="container hero-container">
+
+                <!-- Hero Text -->
+                <div class="hero-content">
+
+                    <span class="hero-tag">
+                        ✨ PLAY. EXPLORE. ENJOY.
+                    </span>
+
+                    <h1>
+                        YOUR PLAYGROUND,
+                        <span>ONE CLICK AWAY.</span>
+                    </h1>
+
+                    <p>
+                        Explore, play, and challenge yourself with
+                        a collection of fun and interactive mini games.
+                        Your next favourite game is just one click away!
+                    </p>
+
+                    <button class="btn btn-primary" id="explore-btn">
+                        EXPLORE GAMES
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Decorative Gaming Illustration -->
+                <div class="hero-visual">
+
+                    <div class="game-illustration">
+
+                        <div class="illustration-glow"></div>
+
+                        <div class="controller">
+
+                            <div class="controller-dpad">
+                                <span></span>
+                            </div>
+
+                            <div class="controller-buttons">
+                                <span class="button-a">A</span>
+                                <span class="button-b">B</span>
+                            </div>
+
+                            <div class="controller-center">
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+                        <div class="floating-icon icon-one">✦</div>
+                        <div class="floating-icon icon-two">✧</div>
+                        <div class="floating-icon icon-three">🎯</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             GAMES COLLECTION SECTION
+        ================================== -->
+
+        <section class="games-section" id="games">
+
+            <div class="container">
+
+                <!-- Section Heading -->
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        GAME COLLECTION
+                    </span>
+
+                    <h2>
+                        EXPLORE <span>GAMES</span>
+                    </h2>
+
+                    <p>
+                        Choose your game and start playing.
+                        Five exciting games, endless fun!
+                    </p>
+
+                </div>
+
+
+                <!-- Game Cards Container -->
+                <div class="games-grid">
+
+
+                    <!-- GAME 1: TIC TAC TOE -->
+
+                    <article class="game-card">
+
+                        <div class="game-card-icon tic-icon">
+                            ❌
+                        </div>
+
+                        <span class="game-category">
+                            STRATEGY
+                        </span>
+
+                        <h3>Tic-Tac-Toe</h3>
+
+                        <p>
+                            Challenge the board and get three
+                            symbols in a row to win.
+                        </p>
+
+                        <button class="btn btn-game"
+                            data-game="tic-tac-toe">
+
+                            PLAY NOW
+                            <span>→</span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- GAME 2: ROCK PAPER SCISSORS -->
+
+                    <article class="game-card">
+
+                        <div class="game-card-icon rps-icon">
+                            ✊
+                        </div>
+
+                        <span class="game-category">
+                            CASUAL
+                        </span>
+
+                        <h3>Rock Paper Scissors</h3>
+
+                        <p>
+                            Choose your move and compete
+                            against the computer.
+                        </p>
+
+                        <button class="btn btn-game"
+                            data-game="rock-paper-scissors">
+
+                            PLAY NOW
+                            <span>→</span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- GAME 3: MEMORY GAME -->
+
+                    <article class="game-card">
+
+                        <div class="game-card-icon memory-icon">
+                            🧠
+                        </div>
+
+                        <span class="game-category">
+                            PUZZLE
+                        </span>
+
+                        <h3>Memory Game</h3>
+
+                        <p>
+                            Flip cards, find matching pairs,
+                            and test your memory.
+                        </p>
+
+                        <button class="btn btn-game"
+                            data-game="memory">
+
+                            PLAY NOW
+                            <span>→</span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- GAME 4: SNAKE -->
+
+                    <article class="game-card">
+
+                        <div class="game-card-icon snake-icon">
+                            🐍
+                        </div>
+
+                        <span class="game-category">
+                            ARCADE
+                        </span>
+
+                        <h3>Snake</h3>
+
+                        <p>
+                            Guide the snake, collect food,
+                            and avoid collisions.
+                        </p>
+
+                        <button class="btn btn-game"
+                            data-game="snake">
+
+                            PLAY NOW
+                            <span>→</span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- GAME 5: PONG -->
+
+                    <article class="game-card">
+
+                        <div class="game-card-icon pong-icon">
+                            🏓
+                        </div>
+
+                        <span class="game-category">
+                            ARCADE
+                        </span>
+
+                        <h3>Pong</h3>
+
+                        <p>
+                            Control your paddle and keep
+                            the ball in play.
+                        </p>
+
+                        <button class="btn btn-game"
+                            data-game="pong">
+
+                            PLAY NOW
+                            <span>→</span>
+
+                        </button>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ABOUT SECTION
+        ================================== -->
+
+        <section class="about-section" id="about">
+
+            <div class="container about-container">
+
+                <div class="about-content">
+
+                    <span class="section-tag">
+                        WHO WE ARE
+                    </span>
+
+                    <h2>
+                        ABOUT <span>MINI GAMES HUB</span>
+                    </h2>
+
+                    <p>
+                        Mini Games Hub is a web-based collection
+                        of interactive games developed using
+                        HTML, CSS, and JavaScript.
+                    </p>
+
+                    <p>
+                        The project demonstrates fundamental
+                        web development concepts through engaging
+                        gameplay, user interaction, game-state
+                        management, and modular programming.
+                    </p>
+
+                    <p>
+                        Developed as part of the Bachelor of
+                        Computer Applications (BCA) academic
+                        curriculum.
+                    </p>
+
+                </div>
+
+
+                <!-- About Information Cards -->
+                <div class="about-features">
+
+                    <div class="feature-card">
+                        <span>🎮</span>
+                        <h3>5 Games</h3>
+                        <p>Multiple interactive experiences.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span>💻</span>
+                        <h3>Web Based</h3>
+                        <p>Play directly in your browser.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span>⚡</span>
+                        <h3>Lightweight</h3>
+                        <p>Fast and easy to use.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span>📱</span>
+                        <h3>Responsive</h3>
+                        <p>Designed for different devices.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         GAMEPLAY VIEW
+    ====================================== -->
+
+    <!-- Initially hidden.
+         JavaScript will display this when a game is selected. -->
+
+    <section class="game-view" id="game-view" hidden>
+
+        <div class="container game-container">
+
+            <!-- Back Button -->
+            <button class="btn btn-back" id="back-home-btn">
+                ← BACK TO HOME
+            </button>
+
+
+            <!-- Game Information -->
+            <div class="game-header">
+
+                <span class="section-tag" id="game-category">
+                    GAME
+                </span>
+
+                <h1 id="game-title">
+                    Game Title
+                </h1>
+
+                <p id="game-description">
+                    Game instructions will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- Game Status -->
+            <div class="game-status" id="game-status"
+                role="status" aria-live="polite">
+
+                Ready to Play!
+
+            </div>
+
+
+            <!-- Individual Game Interface -->
+            <div class="game-stage" id="game-stage">
+
+                <!-- Game modules will generate their
+                     respective gameplay interfaces here. -->
+
+            </div>
+
+
+            <!-- Game Controls -->
+            <div class="game-controls">
+
+                <button class="btn btn-primary" id="restart-btn">
+                    ↻ RESTART GAME
+                </button>
+
+                <button class="btn btn-secondary" id="game-home-btn">
+                    ⌂ BACK TO HOME
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo footer-logo">
+                    🎮 MINI GAMES
+                    <span class="logo-highlight">HUB</span>
+                </a>
+
+                <p>
+                    Your playground, one click away.
+                    Play, explore, and enjoy!
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>QUICK LINKS</h3>
+
+                <a href="#home">Home</a>
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+
+            </div>
+
+
+            <div class="footer-tech">
+
+                <h3>TECHNOLOGIES</h3>
+
+                <p>HTML5</p>
+                <p>CSS3</p>
+                <p>JavaScript</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Mini Games Hub.
+                Developed as a BCA Academic Project.
+            </p>
+
+            <p>
+                Designed & Developed by Tilak Mehrotra
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT FILES
+    ====================================== -->
+
+    <!-- Main JavaScript Entry Point -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
