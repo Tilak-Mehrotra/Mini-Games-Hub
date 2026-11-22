@@ -29,6 +29,12 @@ import {
     cleanupSnake
 } from "./games/snake.js";
 
+// Pong
+import {
+    initializePong,
+    cleanupPong
+} from "./games/pong.js";
+
 
 // ============================================
 // GAME REGISTRY
@@ -54,6 +60,11 @@ const gameRegistry = {
     "snake": {
         initialize: initializeSnake,
         cleanup: cleanupSnake
+    },
+
+    "pong": {
+        initialize: initializePong,
+        cleanup: cleanupPong
     }
 
 };

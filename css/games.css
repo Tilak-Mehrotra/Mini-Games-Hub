@@ -770,3 +770,121 @@
     }
 
 }
+
+/* ============================================
+   PONG GAME
+============================================ */
+
+.pong-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #151a30;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+
+/* ============================================
+   SCOREBOARD
+============================================ */
+
+.pong-scoreboard {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.pong-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    padding: 15px;
+    background: #101426;
+    border-radius: 12px;
+}
+
+.pong-score span:first-child {
+    color: #9298b5;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pong-score span:last-child {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+/* ============================================
+   CANVAS
+============================================ */
+
+.pong-canvas-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: #101426;
+    border: 2px solid rgba(124, 92, 255, 0.3);
+    border-radius: 12px;
+}
+
+#pong-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    aspect-ratio: 3 / 2;
+}
+
+
+/* ============================================
+   CONTROLS INFO
+============================================ */
+
+.pong-controls-info {
+    text-align: center;
+    margin-top: 20px;
+    color: #9298b5;
+    font-size: 0.85rem;
+}
+
+.pong-controls-info strong {
+    color: #ffffff;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+
+@media (max-width: 500px) {
+
+    .pong-container {
+        padding: 15px;
+    }
+
+    .pong-controls-info {
+        font-size: 0.75rem;
+    }
+
+    .pong-scoreboard {
+        gap: 10px;
+    }
+
+    .pong-score {
+        padding: 10px;
+    }
+
+    .pong-score span:last-child {
+        font-size: 1.5rem;
+    }
+
+}
