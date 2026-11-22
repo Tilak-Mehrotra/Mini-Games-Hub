@@ -439,3 +439,236 @@
     }
 
 }
+
+/* ============================================
+   MEMORY MATCH GAME
+============================================ */
+
+.memory-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #151a30;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+
+/* ============================================
+   MEMORY INFO / SCOREBOARD
+============================================ */
+
+.memory-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.memory-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    padding: 15px;
+    background: #101426;
+    border-radius: 12px;
+}
+
+.memory-label {
+    color: #9298b5;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.memory-stat span:last-child {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+
+/* ============================================
+   MEMORY BOARD
+============================================ */
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    position: relative;
+}
+
+
+/* ============================================
+   MEMORY CARDS
+============================================ */
+
+.memory-card {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    perspective: 800px;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.memory-card-front {
+    background: #252d4b;
+    border: 2px solid rgba(124, 92, 255, 0.25);
+    color: #7c5cff;
+    transition: 0.25s ease;
+}
+
+.memory-card:hover:not(.flipped):not(.matched) .memory-card-front {
+    background: #303b60;
+    border-color: #7c5cff;
+    transform: scale(1.03);
+}
+
+.memory-card-back {
+    background: #101426;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    transform: rotateY(180deg);
+    font-size: 2.5rem;
+}
+
+
+/* ============================================
+   MATCHED CARDS
+============================================ */
+
+.memory-card.matched {
+    cursor: default;
+}
+
+.memory-card.matched .memory-card-back {
+    background: rgba(46, 204, 113, 0.12);
+    border-color: #2ecc71;
+}
+
+.memory-card.matched .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched:hover {
+    transform: none;
+}
+
+
+/* ============================================
+   WIN MESSAGE
+============================================ */
+
+.memory-win-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 15px;
+    background: #101426;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    border-radius: 15px;
+    color: #ffffff;
+    animation: memoryWinAppear 0.4s ease;
+}
+
+.memory-win-message h2 {
+    color: #2ecc71;
+    margin-bottom: 12px;
+}
+
+.memory-win-message p {
+    color: #c5c9dc;
+    margin: 8px 0;
+}
+
+
+/* ============================================
+   WIN ANIMATION
+============================================ */
+
+@keyframes memoryWinAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================
+   MEMORY RESPONSIVE DESIGN
+============================================ */
+
+@media (max-width: 600px) {
+
+    .memory-container {
+        padding: 15px;
+    }
+
+    .memory-board {
+        gap: 8px;
+    }
+
+    .memory-card-front,
+    .memory-card-back {
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .memory-card-back {
+        font-size: 2rem;
+    }
+
+    .memory-info {
+        gap: 8px;
+    }
+
+    .memory-stat {
+        padding: 10px 5px;
+    }
+
+    .memory-stat span:last-child {
+        font-size: 1.3rem;
+    }
+
+    .memory-label {
+        font-size: 0.65rem;
+    }
+
+}

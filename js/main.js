@@ -25,6 +25,13 @@ import {
 } from "./games/rock-paper-scissors.js";
 
 
+// Memory Match
+import {
+    initializeMemory,
+    cleanupMemory
+} from "./games/memory.js";
+
+
 // ============================================
 // GAME REGISTRY
 // ============================================
@@ -39,6 +46,11 @@ const gameRegistry = {
     "rock-paper-scissors": {
         initialize: initializeRockPaperScissors,
         cleanup: cleanupRockPaperScissors
+    },
+
+    "memory": {
+        initialize: initializeMemory,
+        cleanup: cleanupMemory
     }
 
 };
