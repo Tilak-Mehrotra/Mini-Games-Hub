@@ -4,15 +4,25 @@
 // ============================================
 
 
-// Import navigation
+// ============================================
+// IMPORTS
+// ============================================
+
 import { initializeNavigation } from "./navigation.js";
 
 
-// Import Tic-Tac-Toe
+// Tic-Tac-Toe
 import {
     initializeTicTacToe,
     cleanupTicTacToe
 } from "./games/tic-tac-toe.js";
+
+
+// Rock Paper Scissors
+import {
+    initializeRockPaperScissors,
+    cleanupRockPaperScissors
+} from "./games/rock-paper-scissors.js";
 
 
 // ============================================
@@ -24,6 +34,11 @@ const gameRegistry = {
     "tic-tac-toe": {
         initialize: initializeTicTacToe,
         cleanup: cleanupTicTacToe
+    },
+
+    "rock-paper-scissors": {
+        initialize: initializeRockPaperScissors,
+        cleanup: cleanupRockPaperScissors
     }
 
 };
