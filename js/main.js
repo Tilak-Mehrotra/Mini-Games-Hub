@@ -3,13 +3,7 @@
 // MAIN APPLICATION
 // ============================================
 
-
-// ============================================
-// IMPORTS
-// ============================================
-
 import { initializeNavigation } from "./navigation.js";
-
 
 // Tic-Tac-Toe
 import {
@@ -17,19 +11,23 @@ import {
     cleanupTicTacToe
 } from "./games/tic-tac-toe.js";
 
-
 // Rock Paper Scissors
 import {
     initializeRockPaperScissors,
     cleanupRockPaperScissors
 } from "./games/rock-paper-scissors.js";
 
-
 // Memory Match
 import {
     initializeMemory,
     cleanupMemory
 } from "./games/memory.js";
+
+// Snake
+import {
+    initializeSnake,
+    cleanupSnake
+} from "./games/snake.js";
 
 
 // ============================================
@@ -51,6 +49,11 @@ const gameRegistry = {
     "memory": {
         initialize: initializeMemory,
         cleanup: cleanupMemory
+    },
+
+    "snake": {
+        initialize: initializeSnake,
+        cleanup: cleanupSnake
     }
 
 };
@@ -72,7 +75,6 @@ export function loadGame(gameName) {
 
     console.log("Requested game:", gameName);
 
-
     // Clean up previous game
     if (activeGame && activeGame.cleanup) {
         activeGame.cleanup();
@@ -81,17 +83,16 @@ export function loadGame(gameName) {
     activeGame = null;
     activeGameName = null;
 
-
     // Find game
     const game = gameRegistry[gameName];
-
 
     // Check if game exists
     if (!game) {
 
         console.error("Game module not found:", gameName);
 
-        document.getElementById("game-title").textContent = "Game Not Available";
+        document.getElementById("game-title").textContent =
+            "Game Not Available";
 
         document.getElementById("game-status").textContent =
             `The game "${gameName}" has not been implemented yet.`;
@@ -106,17 +107,14 @@ export function loadGame(gameName) {
         return;
     }
 
-
     // Store active game
     activeGame = game;
     activeGameName = gameName;
-
 
     // Initialize selected game
     game.initialize();
 
     console.log(`${gameName} loaded successfully!`);
-
 }
 
 
@@ -132,7 +130,6 @@ export function unloadGame() {
 
     activeGame = null;
     activeGameName = null;
-
 }
 
 
@@ -144,10 +141,8 @@ function initializeApp() {
 
     console.log("Mini Games Hub starting...");
 
-
     // Initialize navigation
     initializeNavigation();
-
 
     // Game selection event
     window.addEventListener("gameSelected", (event) => {
@@ -160,14 +155,10 @@ function initializeApp() {
 
     });
 
-
     // Return home event
     window.addEventListener("returnHome", () => {
-
         unloadGame();
-
     });
-
 
     // Restart game button
     const restartButton = document.getElementById("restart-btn");
@@ -177,20 +168,15 @@ function initializeApp() {
         restartButton.addEventListener("click", () => {
 
             if (activeGame) {
-
                 activeGame.cleanup();
-
                 activeGame.initialize();
-
             }
 
         });
 
     }
 
-
     console.log("Mini Games Hub ready!");
-
 }
 
 
