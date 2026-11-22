@@ -1,6 +1,8 @@
+
 /* =========================================
    MINI GAMES HUB
    Main Website Stylesheet
+   Retro Arcade Theme
 ========================================= */
 
 
@@ -9,25 +11,33 @@
 ========================================= */
 
 :root {
-    --bg-primary: #090b16;
-    --bg-secondary: #101426;
-    --bg-card: #151a30;
+    /* Backgrounds */
+    --bg-primary: #120e17;
+    --bg-secondary: #1c1420;
+    --bg-card: #251a26;
 
-    --accent-purple: #8b5cf6;
-    --accent-blue: #3b82f6;
-    --accent-cyan: #22d3ee;
+    /* Arcade Colors */
+    --accent-purple: #b56cff;
+    --accent-blue: #ff9d35;
+    --accent-cyan: #ffd166;
+    --accent-red: #ff5c5c;
+    --accent-green: #8ee06b;
 
-    --text-primary: #ffffff;
-    --text-secondary: #a1a8bd;
+    /* Text */
+    --text-primary: #fff2df;
+    --text-secondary: #c4b3a1;
 
-    --border-color: rgba(255, 255, 255, 0.09);
+    /* Borders */
+    --border-color: rgba(255, 174, 75, 0.18);
 
+    /* Gradients */
     --gradient-primary: linear-gradient(
         135deg,
-        #8b5cf6,
-        #3b82f6
+        #ff9d35,
+        #e45b24
     );
 
+    /* Transitions */
     --transition: all 0.3s ease;
 }
 
@@ -93,7 +103,7 @@ section {
     top: 0;
     z-index: 1000;
 
-    background: rgba(9, 11, 22, 0.92);
+    background: rgba(15, 10, 18, 0.94);
     backdrop-filter: blur(15px);
 
     border-bottom: 1px solid var(--border-color);
@@ -122,7 +132,7 @@ section {
 }
 
 .logo-highlight {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
 }
 
 .nav-menu {
@@ -141,7 +151,7 @@ section {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
 }
 
 .menu-toggle {
@@ -165,73 +175,172 @@ section {
 
 
 /* =========================================
-   4. HERO SECTION
+   4. HERO SECTION - RETRO ARCADE
 ========================================= */
 
 .hero-section {
-    min-height: 600px;
+    position: relative;
+    min-height: 650px;
 
     display: flex;
     align-items: center;
 
-    background:
-        radial-gradient(
-            circle at 80% 50%,
-            rgba(91, 63, 180, 0.15),
-            transparent 35%
-        ),
-        var(--bg-primary);
+    padding: 0;
+    overflow: hidden;
+
+    background: #120d18;
 }
 
+/* Arcade Artwork */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/images/arcade-hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.02);
+}
+
+/* Dark overlay for readable text */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(12, 8, 15, 0.95) 0%,
+        rgba(12, 8, 15, 0.82) 35%,
+        rgba(12, 8, 15, 0.35) 70%,
+        rgba(12, 8, 15, 0.15) 100%
+    );
+
+    z-index: 1;
+}
+
+/* Hero content */
+
 .hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1200px;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    max-width: 650px;
+    padding: 80px 0;
 }
 
-.hero-tag,
-.section-tag {
+/* Arcade tag */
+
+.hero-tag {
     display: inline-block;
 
-    color: var(--accent-cyan);
+    color: #ffb347;
 
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 3px;
 
-    margin-bottom: 20px;
+    padding: 10px 15px;
+
+    background: rgba(255, 179, 71, 0.08);
+    border: 1px solid rgba(255, 179, 71, 0.35);
+    border-radius: 4px;
+
+    margin-bottom: 25px;
 }
 
+/* Hero heading */
+
 .hero-content h1 {
-    font-size: clamp(38px, 5vw, 65px);
-    line-height: 1.15;
-    font-weight: 900;
+    font-size: clamp(45px, 6vw, 82px);
+    line-height: 1.05;
+    font-weight: 1000;
     letter-spacing: -2px;
+
+    color: #fff4dc;
+
+    text-shadow:
+        3px 3px 0 #271323,
+        0 0 25px rgba(255, 145, 40, 0.2);
 }
 
 .hero-content h1 span {
     display: block;
 
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ff9d35;
+
+    background: none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #ff9d35;
+
+    text-shadow:
+        3px 3px 0 #431e19,
+        0 0 20px rgba(255, 157, 53, 0.4);
 }
 
+/* Hero description */
+
 .hero-content p {
-    color: var(--text-secondary);
+    max-width: 520px;
+
+    color: #d7c6b4;
 
     font-size: 16px;
     line-height: 1.9;
 
     margin: 25px 0 35px;
-    max-width: 520px;
+}
+
+/* Arcade entrance button */
+
+.hero-content .btn-primary {
+    background: linear-gradient(
+        135deg,
+        #ff9d35,
+        #e45b24
+    );
+
+    color: #1b100b;
+
+    border: 2px solid #ffc46e;
+    border-radius: 5px;
+
+    padding: 16px 28px;
+
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    box-shadow:
+        0 0 15px rgba(255, 132, 37, 0.25),
+        0 5px 0 #813b1b;
+
+    transition: all 0.25s ease;
+}
+
+.hero-content .btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(255, 132, 37, 0.45),
+        0 7px 0 #813b1b;
+
+    background: linear-gradient(
+        135deg,
+        #ffbd59,
+        #ff742b
+    );
 }
 
 
@@ -259,15 +368,15 @@ section {
 
 .btn-primary {
     background: var(--gradient-primary);
-    color: white;
+    color: #1b100b;
 
-    box-shadow: 0 8px 25px rgba(107, 75, 220, 0.25);
+    box-shadow: 0 8px 25px rgba(255, 126, 42, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 30px rgba(107, 75, 220, 0.4);
+    box-shadow: 0 12px 30px rgba(255, 126, 42, 0.35);
 }
 
 .btn-secondary {
@@ -278,196 +387,24 @@ section {
 }
 
 .btn-secondary:hover {
-    border-color: var(--accent-purple);
+    border-color: var(--accent-blue);
 }
 
 
 /* =========================================
-   6. HERO GAMING ILLUSTRATION
+   6. SECTION TAGS
 ========================================= */
 
-.hero-visual {
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 350px;
-}
-
-.game-illustration {
-    width: 340px;
-    height: 300px;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.illustration-glow {
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    border-radius: 50%;
-
-    background: rgba(139, 92, 246, 0.16);
-    filter: blur(50px);
-}
-
-.controller {
-    position: relative;
-    z-index: 2;
-
-    width: 270px;
-    height: 155px;
-
-    background: linear-gradient(
-        145deg,
-        #272d4c,
-        #11172d
-    );
-
-    border-radius: 75px 75px 60px 60px;
-
-    border: 2px solid rgba(255, 255, 255, 0.15);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.5),
-        0 0 35px rgba(139, 92, 246, 0.2);
-
-    transform: rotate(-8deg);
-}
-
-.controller-dpad {
-    position: absolute;
-    top: 55px;
-    left: 45px;
-
-    width: 48px;
-    height: 48px;
-}
-
-.controller-dpad::before,
-.controller-dpad::after {
-    content: "";
-
-    position: absolute;
-    background: #8d96b3;
-    border-radius: 4px;
-}
-
-.controller-dpad::before {
-    width: 48px;
-    height: 16px;
-
-    top: 16px;
-}
-
-.controller-dpad::after {
-    width: 16px;
-    height: 48px;
-
-    left: 16px;
-}
-
-.controller-buttons {
-    position: absolute;
-    right: 38px;
-    top: 45px;
-}
-
-.controller-buttons span {
-    position: absolute;
-
-    width: 27px;
-    height: 27px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.button-a {
-    background: #8b5cf6;
-    top: 0;
-    right: 25px;
-}
-
-.button-b {
-    background: #3b82f6;
-    top: 30px;
-    right: -5px;
-}
-
-.controller-center {
-    position: absolute;
-
-    bottom: 20px;
-    left: 105px;
-
-    display: flex;
-    gap: 12px;
-}
-
-.controller-center span {
-    width: 22px;
-    height: 5px;
-
-    border-radius: 10px;
-
-    background: #59617d;
-}
-
-.floating-icon {
-    position: absolute;
-    z-index: 3;
-
-    font-size: 35px;
-
-    animation: float 3s ease-in-out infinite;
-}
-
-.icon-one {
-    top: 10px;
-    left: 25px;
+.section-tag {
+    display: inline-block;
 
     color: var(--accent-cyan);
-}
 
-.icon-two {
-    right: 15px;
-    top: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
 
-    color: var(--accent-purple);
-    animation-delay: 0.5s;
-}
-
-.icon-three {
-    right: 15px;
-    bottom: 15px;
-
-    font-size: 30px;
-    animation-delay: 1s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+    margin-bottom: 20px;
 }
 
 
@@ -476,7 +413,13 @@ section {
 ========================================= */
 
 .games-section {
-    background: var(--bg-secondary);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 126, 42, 0.05),
+            transparent 50%
+        ),
+        var(--bg-secondary);
 }
 
 .section-heading {
@@ -493,7 +436,7 @@ section {
 
 .section-heading h2 span,
 .about-content h2 span {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
 }
 
 .section-heading p {
@@ -517,10 +460,14 @@ section {
 .game-card {
     position: relative;
 
-    background: var(--bg-card);
+    background: linear-gradient(
+        145deg,
+        #291e2b,
+        #1c1420
+    );
 
     border: 1px solid var(--border-color);
-    border-radius: 15px;
+    border-radius: 12px;
 
     padding: 30px;
 
@@ -529,19 +476,41 @@ section {
     overflow: hidden;
 }
 
+.game-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--gradient-primary);
+
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
 .game-card:hover {
     transform: translateY(-8px);
 
-    border-color: rgba(139, 92, 246, 0.7);
+    border-color: rgba(255, 157, 53, 0.55);
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(255, 126, 42, 0.05);
 }
 
 .game-card-icon {
     width: 65px;
     height: 65px;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     display: flex;
     align-items: center;
@@ -550,26 +519,28 @@ section {
     font-size: 32px;
 
     margin-bottom: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tic-icon {
-    background: rgba(139, 92, 246, 0.18);
+    background: rgba(181, 108, 255, 0.12);
 }
 
 .rps-icon {
-    background: rgba(59, 130, 246, 0.18);
+    background: rgba(255, 157, 53, 0.12);
 }
 
 .memory-icon {
-    background: rgba(34, 211, 238, 0.15);
+    background: rgba(255, 209, 102, 0.12);
 }
 
 .snake-icon {
-    background: rgba(34, 197, 94, 0.15);
+    background: rgba(142, 224, 107, 0.12);
 }
 
 .pong-icon {
-    background: rgba(245, 158, 11, 0.15);
+    background: rgba(255, 92, 92, 0.12);
 }
 
 .game-category {
@@ -603,16 +574,17 @@ section {
 .btn-game {
     width: 100%;
 
-    background: rgba(139, 92, 246, 0.12);
+    background: rgba(255, 157, 53, 0.08);
 
-    border: 1px solid rgba(139, 92, 246, 0.25);
+    border: 1px solid rgba(255, 157, 53, 0.22);
 
-    color: #c4b5fd;
+    color: #ffbd72;
 }
 
 .btn-game:hover {
     background: var(--gradient-primary);
-    color: white;
+    color: #1b100b;
+    border-color: #ffbd72;
 }
 
 
@@ -621,7 +593,13 @@ section {
 ========================================= */
 
 .about-section {
-    background: var(--bg-primary);
+    background:
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(181, 108, 255, 0.04),
+            transparent 40%
+        ),
+        var(--bg-primary);
 }
 
 .about-container {
@@ -655,7 +633,11 @@ section {
 }
 
 .feature-card {
-    background: var(--bg-card);
+    background: linear-gradient(
+        145deg,
+        #291e2b,
+        #1c1420
+    );
 
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -666,7 +648,7 @@ section {
 }
 
 .feature-card:hover {
-    border-color: var(--accent-purple);
+    border-color: var(--accent-blue);
     transform: translateY(-5px);
 }
 
@@ -690,7 +672,7 @@ section {
 ========================================= */
 
 .footer {
-    background: #070914;
+    background: #0b0810;
 
     border-top: 1px solid var(--border-color);
 
@@ -743,7 +725,7 @@ section {
 }
 
 .footer-links a:hover {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
 }
 
 .footer-bottom {
@@ -758,7 +740,7 @@ section {
 }
 
 .footer-bottom p {
-    color: #777f96;
+    color: #857667;
     font-size: 11px;
 }
 
@@ -774,7 +756,6 @@ a:focus-visible {
 }
 
 ::selection {
-    background: var(--accent-purple);
-    color: white;
+    background: var(--accent-blue);
+    color: #1b100b;
 }
-
