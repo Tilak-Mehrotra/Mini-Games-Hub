@@ -1,0 +1,219 @@
+/* ============================================
+   MINI GAMES HUB
+   GAME STYLES
+============================================ */
+
+
+/* ============================================
+   GAME SCREEN
+============================================ */
+
+#game-view {
+    display: none;
+    min-height: 100vh;
+    padding: 100px 20px 40px;
+}
+
+#game-view.active {
+    display: block;
+}
+
+#game-stage {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+
+/* ============================================
+   GAME STATUS
+============================================ */
+
+#game-status {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 20px auto;
+    min-height: 28px;
+}
+
+
+/* ============================================
+   TIC-TAC-TOE CONTAINER
+============================================ */
+
+.tic-tac-toe-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: #151a30;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================
+   PLAYER INFORMATION
+============================================ */
+
+.tic-tac-toe-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.player-indicator {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 10px;
+    border-radius: 12px;
+    background: #101426;
+    color: #9298b5;
+    border: 2px solid transparent;
+    transition: 0.25s ease;
+}
+
+.player-indicator.active {
+    background: rgba(124, 92, 255, 0.12);
+    border-color: #7c5cff;
+    color: #ffffff;
+}
+
+.player-symbol {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+
+/* ============================================
+   TIC-TAC-TOE BOARD
+============================================ */
+
+.tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+
+/* ============================================
+   BOARD CELLS
+============================================ */
+
+.tic-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+
+    background: #101426;
+
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tic-cell:hover:not(:disabled) {
+    background: #202744;
+    border-color: #7c5cff;
+    transform: scale(1.03);
+}
+
+.tic-cell:disabled {
+    cursor: default;
+}
+
+
+/* ============================================
+   PLAYER X
+============================================ */
+
+.tic-cell.cell-x {
+    color: #7c5cff;
+}
+
+
+/* ============================================
+   PLAYER O
+============================================ */
+
+.tic-cell.cell-o {
+    color: #00d9ff;
+}
+
+
+/* ============================================
+   WINNING CELLS
+============================================ */
+
+.tic-cell.winning-cell {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: #2ecc71;
+    box-shadow: 0 0 18px rgba(46, 204, 113, 0.2);
+}
+
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 480px) {
+
+    #game-view {
+        padding: 85px 12px 30px;
+    }
+
+    #game-stage {
+        padding: 15px 5px;
+    }
+
+    .tic-tac-toe-container {
+        padding: 16px;
+    }
+
+    .tic-tac-toe-info {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .player-indicator {
+        padding: 10px 5px;
+        font-size: 0.8rem;
+    }
+
+    .player-symbol {
+        font-size: 1.2rem;
+    }
+
+    .tic-tac-toe-board {
+        gap: 8px;
+    }
+
+    .tic-cell {
+        border-radius: 10px;
+    }
+
+}
